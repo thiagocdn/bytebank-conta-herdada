@@ -1,6 +1,6 @@
-package teste;
+package br.com.bytebank.banco.teste;
 
-import modelo.Conexao;
+import br.com.bytebank.banco.modelo.*;
 
 public class TesteConexao {
     public static void main(String[] args) {
@@ -12,9 +12,9 @@ public class TesteConexao {
             System.out.println("Erro na conexão!");
         }
 
-//        modelo.Conexao con = null;
+//        br.com.bytebank.banco.modelo.Conexao con = null;
 //        try {
-//            con = new modelo.Conexao();
+//            con = new br.com.bytebank.banco.modelo.Conexao();
 //            con.leDados();
 //        } catch (IllegalStateException ex) {
 //            System.out.println("Erro na conexão");
