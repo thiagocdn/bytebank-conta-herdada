@@ -1,3 +1,5 @@
+package modelo;
+
 public class SegureDeVida implements Tributavel {
 
     @Override
