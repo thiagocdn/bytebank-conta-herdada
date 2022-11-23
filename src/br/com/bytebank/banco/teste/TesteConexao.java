@@ -1,6 +1,6 @@
 package br.com.bytebank.banco.teste;
 
-import br.com.bytebank.banco.modelo.*;
+import br.com.bytebank.banco.modelo.Conexao;
 
 public class TesteConexao {
     public static void main(String[] args) {
