@@ -1,64 +1,34 @@
 package br.com.bytebank.banco.teste;
 
-import br.com.bytebank.banco.modelo.Conta;
-import br.com.bytebank.banco.modelo.ContaCorrente;
-import br.com.bytebank.banco.modelo.ContaPoupanca;
-
 public class Teste {
+
     public static void main(String[] args) {
-        System.out.println();
-        System.out.println("x");
-        System.out.println(3);
-        System.out.println(false);
+        int[] idades = new int[5];
 
-//        ContaCorrente cc = new ContaCorrente(22,33);
-        Object cc = new ContaCorrente(22,33);
-        ContaPoupanca cp = new ContaPoupanca(33,44);
+//        int idade1 = 19;
+//        int idade2 = 29;
+//        int idade3 = 39;
+//        int idade4 = 49;
+//        int idade5 = 59;
 
-        System.out.println(cc);
-        System.out.println(cp);
+//        idades[0] = 19;
+//        idades[1] = 29;
+//        idades[2] = 39;
+//        idades[3] = 49;
+//        idades[4] = 59;
 
-        println();
-        println(12);
-        println(true);
-        println(cc);
+        for(int i = 0; i < idades.length; i++) {
+            idades[i] = (i+1)*10 + 9;
+        }
+        for(int i = 0; i < idades.length; i++) {
+            System.out.println(idades[i]);
+        }
 
-        println("abc");
+//        int idade1 = idades[3];
+//        System.out.println(idade1);
+//        System.out.println(idades.length);
 
-        cc.toString(); // IMPLEMENTADO NA CLASSE OBJECT!
+
+
     }
-
-    static void println() {
-//        ...
-    }
-
-    static void println(int x) {
-//        ...
-    }
-
-    static void println(boolean x) {
-//        ...
-    }
-
-//    static void println(ContaCorrente x) {
-////        ...
-//    }
-
-//    static void println(ContaPoupanca x) {
-////        ...
-//    }
-
-    static void println(Conta x) {
-//        ...
-    }
-
-//    TODAS AS CLASSES TEM A CLASSE OBJECT COMO HERANÇA FINAL!!!
-    static void println(Object x) {
-//        ...
-    }
-
-
-//    ...
-
-
 }
