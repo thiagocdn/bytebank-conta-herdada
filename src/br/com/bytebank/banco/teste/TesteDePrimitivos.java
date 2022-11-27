@@ -1,6 +1,6 @@
 package br.com.bytebank.banco.teste;
 
-public class Teste {
+public class TesteDePrimitivos {
 
     public static void main(String[] args) {
         int[] idades = new int[5];
