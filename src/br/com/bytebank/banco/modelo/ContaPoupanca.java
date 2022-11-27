@@ -12,7 +12,7 @@ public class ContaPoupanca extends Conta {
 
     @Override
     public String toString() {
-        return "ContaCorrente, " + super.toString();
+        return "ContaPoupanca, " + super.toString();
     }
 
 }
