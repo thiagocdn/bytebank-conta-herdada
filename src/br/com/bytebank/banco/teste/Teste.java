@@ -11,7 +11,8 @@ public class Teste {
         System.out.println(3);
         System.out.println(false);
 
-        ContaCorrente cc = new ContaCorrente(22,33);
+//        ContaCorrente cc = new ContaCorrente(22,33);
+        Object cc = new ContaCorrente(22,33);
         ContaPoupanca cp = new ContaPoupanca(33,44);
 
         System.out.println(cc);
