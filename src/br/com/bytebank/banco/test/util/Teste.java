@@ -6,6 +6,7 @@ import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -46,9 +47,13 @@ public class Teste {
             System.out.println(conta + ", " + conta.getTitular().getNome());
         }
 
-//        NumeroDaContaComparator comparator = new NumeroDaContaComparator();
-        TitularDaContaComparator comparator = new TitularDaContaComparator();
-        lista.sort(comparator);
+//        lista.sort(new NumeroDaContaComparator());
+//        lista.sort(new TitularDaContaComparator());
+
+        Collections.sort(lista, new NumeroDaContaComparator());
+//        Collections.sort(lista, new TitularDaContaComparator());
+
+        Collections.reverse(lista);
 
         System.out.println("---------------------");
 
@@ -74,6 +79,7 @@ class TitularDaContaComparator implements Comparator<Conta> {
 class NumeroDaContaComparator implements Comparator<Conta> {
     @Override
     public int compare(Conta c1, Conta c2) {
-        return c1.getNumero() - c2.getNumero();
+        return Integer.compare(c1.getNumero(), c2.getNumero());
+//        return c1.getNumero() - c2.getNumero();
     }
 }
