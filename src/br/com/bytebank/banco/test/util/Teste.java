@@ -16,25 +16,25 @@ public class Teste {
         Cliente clienteCC1 = new Cliente();
         clienteCC1.setNome("Nico");
         cc1.setTitular(clienteCC1);
-        cc1.deposita(333.0);
+        cc1.deposita(133.0);
 
         Conta cc2 = new ContaPoupanca(22, 44);
         Cliente clienteCC2 = new Cliente();
         clienteCC2.setNome("Guilherme");
         cc2.setTitular(clienteCC2);
-        cc2.deposita(444.0);
+        cc2.deposita(244.0);
 
         Conta cc3 = new ContaCorrente(22, 11);
         Cliente clienteCC3 = new Cliente();
         clienteCC3.setNome("Paulo");
         cc3.setTitular(clienteCC3);
-        cc3.deposita(111.0);
+        cc3.deposita(411.0);
 
         Conta cc4 = new ContaPoupanca(22, 22);
         Cliente clienteCC4 = new Cliente();
         clienteCC4.setNome("Ana");
         cc4.setTitular(clienteCC4);
-        cc4.deposita(222.0);
+        cc4.deposita(112.0);
 
         List<Conta> lista = new ArrayList<>();
         lista.add(cc1);
@@ -44,22 +44,25 @@ public class Teste {
 
         for (Conta conta : lista) {
 //            System.out.println(conta);
-            System.out.println(conta + ", " + conta.getTitular().getNome());
+            System.out.println(conta + ", " + conta.getTitular().getNome() + ", saldo: " + conta.getSaldo());
         }
 
 //        lista.sort(new NumeroDaContaComparator());
 //        lista.sort(new TitularDaContaComparator());
 
-        Collections.sort(lista, new NumeroDaContaComparator());
+//        Collections.sort(lista, new NumeroDaContaComparator());
 //        Collections.sort(lista, new TitularDaContaComparator());
 
+        lista.sort(null); // USE NATURAL ORDER - Defined by "saldo"
+
+//        Collections.sort(lista);
         Collections.reverse(lista);
 
         System.out.println("---------------------");
 
         for (Conta conta : lista) {
 //            System.out.println(conta);
-            System.out.println(conta + ", " + conta.getTitular().getNome());
+            System.out.println(conta + ", " + conta.getTitular().getNome() + ", saldo: " + conta.getSaldo());
         }
 
 
