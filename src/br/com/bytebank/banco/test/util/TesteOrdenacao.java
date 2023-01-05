@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Teste {
+public class TesteOrdenacao {
     public static void main(String[] args) {
         Conta cc1 = new ContaCorrente(22, 33);
         Cliente clienteCC1 = new Cliente();
@@ -42,19 +42,47 @@ public class Teste {
         lista.add(cc3);
         lista.add(cc4);
 
-        // Function Objects
-        // Classe anonima
-        lista.sort((c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()));
-
-
-        lista.sort((c1, c2) -> {
-            String nomeC1 = c1.getTitular().getNome();
-            String nomeC2 = c2.getTitular().getNome();
-            return nomeC1.compareTo(nomeC2);
-        });
-
         for (Conta conta : lista) {
+//            System.out.println(conta);
             System.out.println(conta + ", " + conta.getTitular().getNome() + ", saldo: " + conta.getSaldo());
         }
+
+//        lista.sort(new NumeroDaContaComparator());
+//        lista.sort(new TitularDaContaComparator());
+
+//        Collections.sort(lista, new NumeroDaContaComparator());
+//        Collections.sort(lista, new TitularDaContaComparator());
+
+        lista.sort(null); // USE NATURAL ORDER - Defined by "saldo"
+
+//        Collections.sort(lista);
+        Collections.reverse(lista);
+
+        System.out.println("---------------------");
+
+        for (Conta conta : lista) {
+//            System.out.println(conta);
+            System.out.println(conta + ", " + conta.getTitular().getNome() + ", saldo: " + conta.getSaldo());
+        }
+
+
+    }
+}
+
+class TitularDaContaComparator implements Comparator<Conta> {
+    @Override
+    public int compare(Conta c1, Conta c2) {
+        String nomeC1 = c1.getTitular().getNome();
+        String nomeC2 = c2.getTitular().getNome();
+
+        return nomeC1.compareTo(nomeC2);
+    }
+}
+
+class NumeroDaContaComparator implements Comparator<Conta> {
+    @Override
+    public int compare(Conta c1, Conta c2) {
+        return Integer.compare(c1.getNumero(), c2.getNumero());
+//        return c1.getNumero() - c2.getNumero();
     }
 }
