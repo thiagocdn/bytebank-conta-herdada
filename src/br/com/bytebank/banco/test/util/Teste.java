@@ -53,8 +53,12 @@ public class Teste {
             return nomeC1.compareTo(nomeC2);
         });
 
-        for (Conta conta : lista) {
+        lista.forEach((conta) -> {
             System.out.println(conta + ", " + conta.getTitular().getNome() + ", saldo: " + conta.getSaldo());
-        }
+        });
+
+//        for (Conta conta : lista) {
+//            System.out.println(conta + ", " + conta.getTitular().getNome() + ", saldo: " + conta.getSaldo());
+//        }
     }
 }
